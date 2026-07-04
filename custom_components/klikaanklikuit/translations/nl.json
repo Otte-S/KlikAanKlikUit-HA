@@ -1,0 +1,43 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "KlikAanKlikUit hub verbinden",
+        "data": {
+          "mac": "MAC-adres van de ICS2000",
+          "email": "E-mailadres (KlikAanKlikUit/Trust account)",
+          "password": "Wachtwoord",
+          "local_ip": "Lokaal IP van de hub (optioneel, forceert lokale UDP-besturing)"
+        }
+      },
+      "discovery_confirm": {
+        "title": "KlikAanKlikUit hub gevonden",
+        "description": "Er is een hub gevonden op {ip}. Vul je KlikAanKlikUit/Trust-account in om af te ronden.",
+        "data": {
+          "mac": "MAC-adres",
+          "email": "E-mailadres",
+          "password": "Wachtwoord"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kon geen verbinding maken met de ICS2000 hub. Controleer MAC-adres, e-mail en wachtwoord.",
+      "unknown": "Onverwachte fout, zie het Home Assistant log voor details."
+    },
+    "abort": {
+      "already_configured": "Deze hub is al geconfigureerd."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "tries": "Aantal pogingen per commando",
+          "sleep": "Pauze tussen pogingen (seconden)",
+          "scan_interval": "Cloud poll-interval status in seconden (min 5; lager = snellere sensoren/automatiseringen, meer cloudverkeer)",
+          "local_ip": "Lokaal IP van de hub (optioneel, forceert lokale UDP-besturing)"
+        }
+      }
+    }
+  }
+}
