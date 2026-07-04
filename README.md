@@ -36,17 +36,3 @@ Bij de integratie kun je onder **Opties** het volgende aanpassen zonder opnieuw 
 Besturen gaat lokaal via je netwerk zodra HA de hub daar vindt, en valt anders automatisch terug op de cloud. Uitlezen van de status gaat altijd via de cloud, want de ICS-2000 kan de status niet lokaal teruggeven. Na een commando toont HA meteen de nieuwe stand, en de cloud bevestigt dat kort daarna. Wijzigingen die je in de KlikAanKlikUit-app maakt verschijnen ook in HA, bij de volgende poll.
 
 Een klassieke afstandsbediening die rechtstreeks naar een ontvanger zendt, buiten de hub om, is niet zichtbaar in HA. Dat signaal bereikt de cloud niet.
-
-## De deurbel
-
-De deurbel komt binnen als `binary_sensor.voordeurbel`. Of een beldruk in HA zichtbaar wordt, hangt af van of de ICS-2000 die druk doorgeeft aan de cloud. Test dit door aan te bellen en te kijken of de sensor van uit naar aan springt. Zet het poll-interval laag voor de meeste kans. Verandert de sensor niet, dan komt de druk niet in de cloud terecht en is een belmelding via deze weg niet mogelijk.
-
-## Overstappen vanaf de oude ics2000-integratie
-
-Draaide je eerder de oude integratie met domein `ics2000`? Verwijder die eerst, samen met een eventuele `light: - platform: ics2000` regel uit je `configuration.yaml`. Deze integratie gebruikt het domein `klikaanklikuit`, dus je entiteiten krijgen nieuwe namen. Verwijzingen naar oude `ics2000.*` entiteiten in je automatiseringen en dashboards pas je handmatig aan.
-
-## Problemen oplossen
-
-- **Dubbele of niet-beschikbare entiteiten na een update:** verwijder de integratie en voeg hem opnieuw toe. Dat maakt het entiteitenregister schoon en bouwt alles opnieuw op.
-- **Commando's gaan via de cloud in plaats van lokaal:** vul het lokale IP van de hub in bij de opties.
-- **Meer inzicht nodig:** download de diagnose via de drie puntjes op de integratiekaart. Daar staat per apparaat het type en de ruwe status. Je e-mailadres, wachtwoord en MAC-adres worden daarin weggelaten.
