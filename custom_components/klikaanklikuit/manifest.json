@@ -1,0 +1,16 @@
+{
+  "domain": "klikaanklikuit",
+  "name": "KlikAanKlikUit",
+  "documentation": "https://github.com/Otte-S/KlikAanKlikUit-HA/blob/main/README.md",
+  "dependencies": [],
+  "codeowners": ["@Otte-S"],
+  "requirements": [
+    "ics2000_python@git+https://github.com/rdegraafwhizzkit/ics2000-python.git@v1.0.4"
+  ],
+  "iot_class": "cloud_polling",
+  "version": "1.0.1",
+  "integration_type": "hub",
+  "config_flow": true,
+  "homeassistant": "2024.1.0",
+  "issue_tracker": "https://github.com/Otte-S/KlikAanKlikUit-HA/issues"
+}
